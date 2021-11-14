@@ -13,6 +13,7 @@ from logger import Logger
 from utils.misc import wait, cut_roi
 from config import Config
 from utils.misc import color_filter
+import requests
 
 gameCount = 0
     
