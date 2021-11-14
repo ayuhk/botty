@@ -13,7 +13,7 @@ from logger import Logger
 from utils.misc import wait, cut_roi
 from config import Config
 from utils.misc import color_filter
-
+import requests
 
 class UiManager():
     """Everything that is clicking on some static 2D UI or is checking anything in regard to it should be placed here."""
@@ -171,6 +171,9 @@ class UiManager():
                 Logger.debug(f"Found Play Btn ({mode_info}) -> clicking it")
                 if mode_info == "online":
                     Logger.warning("You are creating a game in online mode!")
+                    dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
+                    dcdata = {"content": f"Creating Game..."}
+                    requests.post(dcurl, json=dcdata)
                 mouse.move(x, y, randomize=5)
                 mouse.click(button="left")
                 break
