@@ -7,8 +7,6 @@ import warnings
 import requests
 from datetime import datetime
 
-gameCount = 1
-
 class Logger:
     """Manage logging"""
     _logger_level = None
@@ -36,7 +34,6 @@ class Logger:
         dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
         dcdata = {"content": f"Game {gameCount}: {datetime.now()} - {data}"}
         requests.post(dcurl, json=dcdata)
-        gameCount += 1
 
     @staticmethod
     def warning(data: str):
