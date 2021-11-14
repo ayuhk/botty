@@ -11,6 +11,7 @@ from beautifultable import BeautifulTable
 import time
 import logging
 
+gameCount = 1
 
 def start_bot():
     try:
