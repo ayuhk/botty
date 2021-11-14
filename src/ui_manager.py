@@ -14,6 +14,8 @@ from utils.misc import wait, cut_roi
 from config import Config
 from utils.misc import color_filter
 
+gameCount = 0
+    
 class UiManager():
     """Everything that is clicking on some static 2D UI or is checking anything in regard to it should be placed here."""
 
@@ -147,7 +149,6 @@ class UiManager():
             return True
         return False
 
-    gameCount = 0
     def start_game(self) -> bool:
         """
         Starting a game. Will wait and retry on server connection issue.
