@@ -5,6 +5,7 @@ import sys
 import re
 import warnings
 import requests
+from datetime import datetime
 
 class Logger:
     """Manage logging"""
@@ -30,7 +31,7 @@ class Logger:
             Logger.init()
         Logger.logger.info(data)
         dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
-        dcdata = {"content": f"{data}"}
+        dcdata = {"content": f"{datetime.now()}: {data}"}
         requests.post(dcurl, json=dcdata)
 
     @staticmethod
