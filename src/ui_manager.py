@@ -148,7 +148,6 @@ class UiManager():
             wait(0.1)
             keyboard.send("enter")
             wait(0.5)
-            exit()
             return True
         return False
 
