@@ -147,6 +147,7 @@ class UiManager():
             return True
         return False
 
+    gameCount = 0
     def start_game(self) -> bool:
         """
         Starting a game. Will wait and retry on server connection issue.
@@ -175,6 +176,11 @@ class UiManager():
                     Logger.warning("You are creating a game in online mode!")
                 mouse.move(x, y, randomize=5)
                 mouse.click(button="left")
+                
+                dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
+                dcdata = {"content": f"Game {gameCount}"}
+                requests.post(dcurl, json=dcdata)
+                  
                 break
             time.sleep(3.0)
 
