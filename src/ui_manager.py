@@ -14,6 +14,7 @@ from utils.misc import wait, cut_roi
 from config import Config
 from utils.misc import color_filter
 import requests
+from datetime import datetime
 
 gameCount = 0
     
@@ -180,7 +181,7 @@ class UiManager():
                 mouse.click(button="left")
                 
                 dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
-                dcdata = {"content": f"Game {gameCount}"}
+                dcdata = {"content": f"{datetime.now()}: Game {gameCount}\n-----------------------------------"}
                 requests.post(dcurl, json=dcdata)
                   
                 break
