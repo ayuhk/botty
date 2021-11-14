@@ -133,26 +133,19 @@ class UiManager():
         """
         start = time.time()
         while (time.time() - start) < 15:
+            keyboard.send("space") # key to close all windows, just in case
+            wait(0.1)
             keyboard.send("esc")
             wait(0.1)
-            exit_btn_pos = (self._config.ui_pos["save_and_exit_x"], self._config.ui_pos["save_and_exit_y"])
-            x_m, y_m = self._screen.convert_screen_to_monitor(exit_btn_pos)
-            away_x_m, away_y_m = self._screen.convert_screen_to_monitor((200, 450))
-            while self._template_finder.search_and_wait(["SAVE_AND_EXIT_NO_HIGHLIGHT","SAVE_AND_EXIT_HIGHLIGHT"], roi=self._config.ui_roi["save_and_exit"], time_out=1.5)[0]:
-                delay = [0.9, 1.1]
-                if does_chicken:
-                    delay = [0.3, 0.4]
-                mouse.move(x_m, y_m, randomize=[60, 10], delay_factor=delay)
-                wait(0.03, 0.06)
-                mouse.click(button="left")
-                if does_chicken:
-                    # lets just try again just in case
-                    wait(0.05, 0.08)
-                    mouse.click(button="left")
-                wait(0.1, 0.2)
-                mouse.move(away_x_m, away_y_m, randomize=100, delay_factor=[0.6, 0.9])
-                wait(0.1, 0.5)
-                return True
+            keyboard.send("down")
+            wait(0.1)
+            keyboard.send("down")
+            wait(0.1)
+            keyboard.send("up")
+            wait(0.1)
+            keyboard.send("enter")
+            wait(0.5)
+            return True
         return False
 
     def start_game(self) -> bool:
