@@ -30,9 +30,9 @@ class Logger:
         if Logger.logger is None:
             Logger.init()
         Logger.logger.info(data)
-        global gameCount
+        
         dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
-        dcdata = {"content": f"Game {gameCount}: {datetime.now()} - {data}"}
+        dcdata = {"content": {datetime.now()}: {data}"}
         requests.post(dcurl, json=dcdata)
 
     @staticmethod
