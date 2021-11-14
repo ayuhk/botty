@@ -152,6 +152,9 @@ class UiManager():
         Starting a game. Will wait and retry on server connection issue.
         :return: Bool if action was successful
         """
+        global gameCount
+        gameCount += 1
+        
         while 1:
             img = self._screen.grab()
             # search offline btn
