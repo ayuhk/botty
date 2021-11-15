@@ -32,6 +32,10 @@ class Bot:
         self._pather = Pather(self._screen, self._template_finder)
         self._health_manager = HealthManager(self._screen, self._template_finder, self._ui_manager)
         self._death_manager = DeathManager(self._screen, self._template_finder)
+        
+        print( vars(self._death_manager) )
+        input()
+        
         self._npc_manager = NpcManager(self._screen, self._template_finder)
         self._pickit = PickIt(self._screen, self._item_finder, self._ui_manager)
         if self._config.char["type"] == "sorceress":
