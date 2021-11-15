@@ -175,7 +175,7 @@ class UiManager():
                 x, y = self._screen.convert_screen_to_monitor(pos)
                 mode_info = "offline" if found_off else "online"
                 Logger.debug(f"Found Play Btn ({mode_info}) -> clicking it")
-                # if mode_info == "online":
+                if mode_info == "online":
                     Logger.warning("You are creating a game in online mode!")
                 mouse.move(x, y, randomize=5)
                 mouse.click(button="left")
