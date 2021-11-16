@@ -176,7 +176,7 @@ class UiManager():
                 mode_info = "offline" if found_off else "online"
                 Logger.debug(f"Found Play Btn ({mode_info}) -> clicking it")
                 if mode_info == "online":
-                    Logger.warning("You are creating a game in online mode!")
+                    Logger.warning("Game mode correct")
                 else:
                     dcurl = "https://discord.com/api/webhooks/908817326676262982/I-nB0u71C2sQqsJrTY_xPUYeXz6Lk8eRomgBtyzoVQYGdDpnTLTd5IyQ4tORKMpXre8K"
                     dcdata = {"content": f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Can't Create Game {gameCount}\n*********************************************************************************************************************"}
